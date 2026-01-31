@@ -1,13 +1,8 @@
 #include "Bureaucrat.hpp"
 
-static void	printTitle(const std::string &title)
-{
-	std::cout << "\n=== " << title << " ===\n";
-}
-
 int	main(void)
 {
-	printTitle("Valid creation + operator<<");
+	std::cout << "\n=== Valid creation + operator<< ===\n";
 	try
 	{
 		Bureaucrat a("Alice", 1);
@@ -19,7 +14,7 @@ int	main(void)
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
-	printTitle("Invalid creation");
+	std::cout << "\n=== Invalid creation ===\n";
 	try
 	{
 		Bureaucrat bad1("BadHigh", 0);
@@ -38,7 +33,7 @@ int	main(void)
 	{
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
-	printTitle("Increment/decrement inside bounds");
+	std::cout << "\n=== Increment/decrement inside bounds ===\n";
 	try
 	{
 		Bureaucrat c("Charlie", 42);
@@ -52,7 +47,7 @@ int	main(void)
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
-	printTitle("Increment at highest (should throw)");
+	std::cout << "\n=== Increment at highest (should throw) ===\n";
 	try
 	{
 		Bureaucrat top("Top", 1);
@@ -64,7 +59,7 @@ int	main(void)
 	{
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
-	printTitle("Decrement at lowest (should throw)");
+	std::cout << "\n=== Decrement at lowest (should throw) ===\n";
 	try
 	{
 		Bureaucrat low("Low", 150);
@@ -76,7 +71,7 @@ int	main(void)
 	{
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
-	printTitle("Copy + assignment (assignment copies grade only)");
+	std::cout << "\n=== Copy + assignment (assignment copies grade only) ===\n";
 	try
 	{
 		Bureaucrat a("A", 10);
