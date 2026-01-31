@@ -1,5 +1,8 @@
 #include "Bureaucrat.hpp"
 
+/**
+ * @brief Tests valid bureaucrat creation
+ */
 static void	testValidCreation(void)
 {
 	std::cout << "\n=== Valid creation + operator<< ===\n";
@@ -16,6 +19,9 @@ static void	testValidCreation(void)
 	}
 }
 
+/**
+ * @brief Tests invalid bureaucrat creation (grade out of bounds)
+ */
 static void	testInvalidCreation(void)
 {
 	std::cout << "\n=== Invalid creation ===\n";
@@ -39,6 +45,9 @@ static void	testInvalidCreation(void)
 	}
 }
 
+/**
+ * @brief Tests increment and decrement within valid bounds
+ */
 static void	testIncrementDecrement(void)
 {
 	std::cout << "\n=== Increment/decrement inside bounds ===\n";
@@ -57,6 +66,9 @@ static void	testIncrementDecrement(void)
 	}
 }
 
+/**
+ * @brief Tests increment at grade 1 (should throw exception)
+ */
 static void	testIncrementAtHighest(void)
 {
 	std::cout << "\n=== Increment at highest (should throw) ===\n";
@@ -73,6 +85,9 @@ static void	testIncrementAtHighest(void)
 	}
 }
 
+/**
+ * @brief Tests decrement at grade 150 (should throw exception)
+ */
 static void	testDecrementAtLowest(void)
 {
 	std::cout << "\n=== Decrement at lowest (should throw) ===\n";
@@ -89,6 +104,9 @@ static void	testDecrementAtLowest(void)
 	}
 }
 
+/**
+ * @brief Tests copy constructor and assignment operator
+ */
 static void	testCopyAndAssignment(void)
 {
 	std::cout << "\n=== Copy + assignment (assignment copies grade only) ===\n";
@@ -108,6 +126,10 @@ static void	testCopyAndAssignment(void)
 	}
 }
 
+/**
+ * @brief Entry point - runs all Bureaucrat tests
+ * @return 0 on success
+ */
 int	main(void)
 {
 	testValidCreation();
