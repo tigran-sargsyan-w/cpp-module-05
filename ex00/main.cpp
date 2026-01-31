@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-int	main(void)
+static void	testValidCreation(void)
 {
 	std::cout << "\n=== Valid creation + operator<< ===\n";
 	try
@@ -14,6 +14,10 @@ int	main(void)
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
+}
+
+static void	testInvalidCreation(void)
+{
 	std::cout << "\n=== Invalid creation ===\n";
 	try
 	{
@@ -33,6 +37,10 @@ int	main(void)
 	{
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
+}
+
+static void	testIncrementDecrement(void)
+{
 	std::cout << "\n=== Increment/decrement inside bounds ===\n";
 	try
 	{
@@ -47,6 +55,10 @@ int	main(void)
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
+}
+
+static void	testIncrementAtHighest(void)
+{
 	std::cout << "\n=== Increment at highest (should throw) ===\n";
 	try
 	{
@@ -59,6 +71,10 @@ int	main(void)
 	{
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
+}
+
+static void	testDecrementAtLowest(void)
+{
 	std::cout << "\n=== Decrement at lowest (should throw) ===\n";
 	try
 	{
@@ -71,6 +87,10 @@ int	main(void)
 	{
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
+}
+
+static void	testCopyAndAssignment(void)
+{
 	std::cout << "\n=== Copy + assignment (assignment copies grade only) ===\n";
 	try
 	{
@@ -86,5 +106,15 @@ int	main(void)
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
+}
+
+int	main(void)
+{
+	testValidCreation();
+	testInvalidCreation();
+	testIncrementDecrement();
+	testIncrementAtHighest();
+	testDecrementAtLowest();
+	testCopyAndAssignment();
 	return (0);
 }
