@@ -7,6 +7,15 @@
 
 class Bureaucrat
 {
+  private:
+	Bureaucrat(); // forbidden: use Bureaucrat(name, grade)
+
+	const std::string name;
+	int grade;
+
+	static bool isGradeTooHigh(int value);
+	static bool isGradeTooLow(int value);
+
   public:
 	Bureaucrat(const std::string &nameValue, int gradeValue);
 	Bureaucrat(const Bureaucrat &other);
@@ -31,15 +40,6 @@ class Bureaucrat
 		public:
 		virtual const char *what() const throw();
 	};
-
-  private:
-	Bureaucrat(); // forbidden: use Bureaucrat(name, grade)
-
-	const std::string name;
-	int grade;
-
-	static bool isGradeTooHigh(int value);
-	static bool isGradeTooLow(int value);
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
