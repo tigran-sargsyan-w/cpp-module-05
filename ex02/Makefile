@@ -10,7 +10,10 @@ OBJ_DIR  := obj/
 
 SRCS     := main.cpp \
           Bureaucrat.cpp \
-		  Form.cpp
+		  AForm.cpp \
+		  ShrubberyCreationForm.cpp \
+		  RobotomyRequestForm.cpp \
+		  PresidentialPardonForm.cpp
 
 OBJS     := $(SRCS:%.cpp=$(OBJ_DIR)%.o)
 DEPS     := $(SRCS:%.cpp=$(OBJ_DIR)%.d)
