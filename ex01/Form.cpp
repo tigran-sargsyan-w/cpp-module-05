@@ -1,5 +1,5 @@
-#include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 static const int	highestGrade = 1;
 static const int	lowestGrade = 150;
