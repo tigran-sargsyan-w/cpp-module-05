@@ -5,6 +5,8 @@
 # include <iostream>
 # include <string>
 
+class	Form;
+
 class Bureaucrat
 {
   private:
@@ -17,7 +19,7 @@ class Bureaucrat
 	static bool isGradeTooLow(int value);
 
   public:
-	Bureaucrat(const std::string &nameValue, int gradeValue);
+	Bureaucrat(const std::string &newName, int newGrade);
 	Bureaucrat(const Bureaucrat &other);
 	~Bureaucrat();
 
@@ -28,6 +30,8 @@ class Bureaucrat
 
 	void incrementGrade();
 	void decrementGrade();
+
+	void signForm(Form &form) const;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -42,6 +46,6 @@ class Bureaucrat
 	};
 };
 
-std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
 
 #endif
