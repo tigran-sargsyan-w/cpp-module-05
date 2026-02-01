@@ -124,11 +124,11 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 /**
  * @brief Output stream operator for Bureaucrat
  * @param os - output stream
- * @param b - bureaucrat to output
+ * @param bureaucrat - bureaucrat to output
  * @return reference to the output stream
  */
-std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 {
-	os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
+	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
 	return (os);
 }
