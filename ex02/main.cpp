@@ -4,6 +4,10 @@
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
 
+/**
+ * @brief Entry point - demonstrates form execution by bureaucrats
+ * @return 0 on success
+ */
 int main()
 {
 	Bureaucrat boss("Boss", 1);

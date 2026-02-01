@@ -3,17 +3,36 @@
 #include <ctime>
 #include <iostream>
 
+/**
+ * @brief Default constructor with "default" target
+ */
 RobotomyRequestForm::RobotomyRequestForm()
 	: AForm("RobotomyRequestForm", 72, 45), target("default") {}
 
+/**
+ * @brief Parameterized constructor
+ * @param targetValue - target to be robotomized
+ */
 RobotomyRequestForm::RobotomyRequestForm(const std::string &targetValue)
 	: AForm("RobotomyRequestForm", 72, 45), target(targetValue) {}
 
+/**
+ * @brief Copy constructor
+ * @param other - form to copy from
+ */
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other)
 	: AForm(other), target(other.target) {}
 
+/**
+ * @brief Destructor
+ */
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
+/**
+ * @brief Copy assignment operator
+ * @param other - form to assign from
+ * @return reference to this form
+ */
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
 {
 	if (this != &other)
@@ -24,11 +43,18 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 	return (*this);
 }
 
+/**
+ * @brief Gets the target name
+ * @return const reference to target
+ */
 const std::string &RobotomyRequestForm::getTarget() const
 {
 	return (target);
 }
 
+/**
+ * @brief Makes drilling noises and robotomizes target with 50% success rate
+ */
 void RobotomyRequestForm::executeAction() const
 {
 	static bool seeded = false;
