@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 static const int	highestGrade = 1;
 static const int	lowestGrade = 150;
@@ -108,7 +108,7 @@ void Bureaucrat::decrementGrade()
  * @brief Tries to sign a form and prints the result
  * @param form - form to sign
  */
-void Bureaucrat::signForm(Form &form) const
+void Bureaucrat::signForm(AForm &form) const
 {
 	try
 	{
@@ -118,6 +118,24 @@ void Bureaucrat::signForm(Form &form) const
 	catch (const std::exception &e)
 	{
 		std::cout << name << " couldn’t sign " << form.getName()
+			<< " because " << e.what() << std::endl;
+	}
+}
+
+/**
+ * @brief Tries to execute a form and prints the result
+ * @param form - form to execute
+ */
+void Bureaucrat::executeForm(const AForm &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << name << " executed " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << name << " couldn’t execute " << form.getName()
 			<< " because " << e.what() << std::endl;
 	}
 }
