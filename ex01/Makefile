@@ -9,7 +9,8 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -g3
 OBJ_DIR  := obj/
 
 SRCS     := main.cpp \
-          Bureaucrat.cpp
+          Bureaucrat.cpp \
+		  Form.cpp
 
 OBJS     := $(SRCS:%.cpp=$(OBJ_DIR)%.o)
 DEPS     := $(SRCS:%.cpp=$(OBJ_DIR)%.d)
