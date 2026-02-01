@@ -2,7 +2,7 @@
 #include "Form.hpp"
 
 /**
- * @brief Tests valid form creation + operator<<
+ * @brief Tests valid form creation
  */
 static void	testFormValidCreation(void)
 {
@@ -24,7 +24,7 @@ static void	testFormValidCreation(void)
 }
 
 /**
- * @brief Tests invalid form creation (grade out of bounds)
+ * @brief Tests invalid form creation
  */
 static void	testFormInvalidCreation(void)
 {
