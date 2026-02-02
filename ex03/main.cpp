@@ -3,6 +3,10 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
+/**
+ * @brief Entry point - demonstrates Intern form creation
+ * @return 0 on success
+ */
 int main()
 {
 	Intern intern;
