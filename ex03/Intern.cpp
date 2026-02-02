@@ -1,20 +1,18 @@
-#include "Intern.hpp"
-
-#include <iostream>
-
 #include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include <iostream>
 
 Intern::Intern() {}
 
-Intern::Intern(Intern const & other)
+Intern::Intern(Intern const &other)
 {
 	(void)other;
 }
 
-Intern & Intern::operator=(Intern const & other)
+Intern &Intern::operator=(Intern const &other)
 {
 	(void)other;
 	return (*this);
@@ -22,22 +20,22 @@ Intern & Intern::operator=(Intern const & other)
 
 Intern::~Intern() {}
 
-AForm * Intern::createShrubbery(std::string const & target) const
+AForm *Intern::createShrubbery(std::string const &target) const
 {
 	return (new ShrubberyCreationForm(target));
 }
 
-AForm * Intern::createRobotomy(std::string const & target) const
+AForm *Intern::createRobotomy(std::string const &target) const
 {
 	return (new RobotomyRequestForm(target));
 }
 
-AForm * Intern::createPresidential(std::string const & target) const
+AForm *Intern::createPresidential(std::string const &target) const
 {
 	return (new PresidentialPardonForm(target));
 }
 
-AForm * Intern::makeForm(std::string const & formName, std::string const & target) const
+AForm *Intern::makeForm(std::string const &formName, std::string const &target) const
 {
 	std::string const formNames[3] = {
 		"shrubbery creation",
