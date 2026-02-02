@@ -17,10 +17,11 @@ class Intern
   public:
 	Intern();
 	Intern(Intern const &other);
-	Intern &operator=(Intern const &other);
 	~Intern();
-
-	AForm *makeForm(std::string const &formName, std::string const &target) const;
+    
+	Intern &operator=(Intern const &other);
+	
+    AForm *makeForm(std::string const &formName, std::string const &target) const;
 };
 
 #endif
