@@ -2,7 +2,7 @@
 #                                Makefile (C++)                                #
 # **************************************************************************** #
 
-NAME     := bureaucrats
+NAME     := intern
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -g3
 
@@ -13,7 +13,8 @@ SRCS     := main.cpp \
 		  AForm.cpp \
 		  ShrubberyCreationForm.cpp \
 		  RobotomyRequestForm.cpp \
-		  PresidentialPardonForm.cpp
+		  PresidentialPardonForm.cpp \
+		  Intern.cpp
 
 OBJS     := $(SRCS:%.cpp=$(OBJ_DIR)%.o)
 DEPS     := $(SRCS:%.cpp=$(OBJ_DIR)%.d)
