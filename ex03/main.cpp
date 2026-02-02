@@ -1,44 +1,30 @@
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 #include <iostream>
+#include "Intern.hpp"
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
-/**
- * @brief Entry point - demonstrates form execution by bureaucrats
- * @return 0 on success
- */
 int main()
 {
-	Bureaucrat boss("Boss", 1);
-	Bureaucrat mid("Mid", 50);
-	Bureaucrat low("Low", 150);
+	Intern intern;
+	AForm * form;
 
-	ShrubberyCreationForm shrub("home");
-	RobotomyRequestForm robo("Bender");
-	PresidentialPardonForm pardon("Arthur Dent");
+	form = intern.makeForm("robotomy request", "Bender");
+	if (form)
+	{
+		std::cout << *form << std::endl;
+		delete form;
+	}
 
-	std::cout << "\n=== Execute unsigned forms (must fail) ===" << std::endl;
-	boss.executeForm(shrub);
-	boss.executeForm(robo);
-	boss.executeForm(pardon);
+	form = intern.makeForm("shrubbery creation", "home");
+	if (form)
+	{
+		std::cout << *form << std::endl;
+		delete form;
+	}
 
-	std::cout << "\n=== Sign forms ===" << std::endl;
-	low.signForm(shrub);
-	mid.signForm(shrub);
-	mid.signForm(robo);
-	boss.signForm(robo);
-	boss.signForm(pardon);
+	form = intern.makeForm("some random form", "target");
+	if (form)
+		delete form;
 
-	std::cout << "\n=== Execute forms ===" << std::endl;
-	mid.executeForm(shrub);
-	boss.executeForm(shrub);
-
-	mid.executeForm(robo);
-	boss.executeForm(robo);
-
-	mid.executeForm(pardon);
-	boss.executeForm(pardon);
-
-	return 0;
+	return (0);
 }
