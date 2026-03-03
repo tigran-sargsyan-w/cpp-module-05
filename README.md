@@ -2,7 +2,7 @@
 
 ✅ **Status**: Completed – all exercises  
 🏫 **School**: 42 – C++ Modules (Module 05)  
-🏅 **Score**: (score)/100
+🏅 **Score**: (100)/100
 
 > *Bureaucrats, forms, abstract interfaces, and a lot of exceptions. Repetition, validation, and clean error handling.*
 
